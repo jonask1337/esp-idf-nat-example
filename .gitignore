@@ -1,5 +1,5 @@
-+# ignore build folder
-+build/
-+
-+# ignore all ~ files
-+*~
+# ignore build folder
+build/
+
+# ignore all ~ files
+*~
