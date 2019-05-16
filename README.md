@@ -8,7 +8,7 @@ Based on: https://github.com/espressif/esp-idf/blob/release/v3.3/examples/wifi/g
 
 ## Configuration
 
-In the main/main.c file change the values of the *EXAMPLE_ESP_WIFI_SSID* and *EXAMPLE_ESP_WIFI_PASS* defines to the credentials
+In the `main/main.c` file change the values of the *EXAMPLE_ESP_WIFI_SSID* and *EXAMPLE_ESP_WIFI_PASS* defines to the credentials
 of the WIFI network the ESP32 should connect to.
 
 With the *ESP_AP_SSID* and *ESP_AP_PASS* defines you can change the credentials of the Access Point created by the ESP32.
