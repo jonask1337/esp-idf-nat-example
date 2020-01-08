@@ -29,10 +29,10 @@ Note: It is important to clone the repository. If it is only downloaded it will 
 4. Rename the lwIP library with NAT repository folder from *esp-lwip* to *lwip*.
 
 ### Step 4 - Build and flash the esp-idf-nat-example project
-1. Configure the esp-idf-nat-example project(see Configuration below)
+1. Configure the esp-idf-nat-example project (see Configuration below)
 2. Set the option "Enable copy between Layer2 and Layer3 packets" in the ESP-IDF project configuration.
     1. In the project directory run `make menuconfig` (or `idf.py menuconfig` for cmake).
-    2. Go to Component config -> LWIP and set "Enable copy between Layer2 and Layer3 packets" option.
+    2. Go to *Component config -> LWIP* and set "Enable copy between Layer2 and Layer3 packets" option.
 3. Build the project and flash it to the ESP32.
 
 A detailed instruction on how to build, configure and flash a ESP-IDF project can also be found the official ESP-IDF guide referenced in Step 1.
