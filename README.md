@@ -29,7 +29,7 @@ Note: It is important to clone the repository. If it is only downloaded it will 
 4. Rename the lwIP library with NAT repository folder from *esp-lwip* to *lwip*.
 
 ### Step 4 - Build and flash the esp-idf-nat-example project
-Now just configure the esp-idf-nat-example project(see Configuration below), build it and flash it to the ESP-32.
+Now just configure the esp-idf-nat-example project(see Configuration below), build it and flash it to the ESP32.
 Detailed instruction on how to build and flash a ESP-IDF project can also be found the official ESP-IDF guide referenced in Step 1.
 
 ## Configuration
