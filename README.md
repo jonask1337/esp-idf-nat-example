@@ -8,6 +8,8 @@ Use this project if you want to use it with **PlatformIO**: https://github.com/j
 
 Based on: https://github.com/espressif/esp-idf/blob/release/v3.3/examples/wifi/getting_started/softAP/
 
+![NAT-Setup (4)](https://user-images.githubusercontent.com/6740386/72107648-085e4a80-3332-11ea-95a7-e2269adb37dd.png)
+Example network setup using ESP32 as WiFi repeater. The diagram was created with [Draw.io](https://www.draw.io/).
 ## Get started
 The following are the steps required to run this project on the ESP32 and turn it into a WiFi repeater.
 ### Step 1 - Setup ESP-IDF
