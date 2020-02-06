@@ -1,0 +1,27 @@
+menu "Example Configuration"
+
+    config STA_SSID
+        string "WiFi SSID"
+        default "STA SSID"
+        help
+            SSID (network name) for the example to connect to.
+
+    config STA_PASSWORD
+        string "STA Password"
+        default "STA_PASS"
+        help
+            Password of the network the example to connect to.
+
+    config ESP_AP_SSID
+        string "AP SSID"
+        default "ESP"
+        help
+            SSID (network name) for the example to connect to.
+
+    config ESP_AP_PASSWORD
+        string "AP Password"
+        default "AP_PASS"
+        help
+            WiFi password (WPA or WPA2) for the example to use.
+
+endmenu
