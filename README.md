@@ -37,16 +37,12 @@ Note: It is important to clone the repository. If it is only downloaded it will 
 2. Set the option "Enable copy between Layer2 and Layer3 packets" in the ESP-IDF project configuration.
     1. In the project directory run `make menuconfig` (or `idf.py menuconfig` for cmake).
     2. Go to *Component config -> LWIP* and set "Enable copy between Layer2 and Layer3 packets" option.
+    3. Go to *Example config* and set SSID and Password of both, the uplink STA interface and the SoftAP.
 3. Build the project and flash it to the ESP32.
 
 A detailed instruction on how to build, configure and flash a ESP-IDF project can also be found the official ESP-IDF guide referenced in Step 1.
 
 ## Configuration
-
-In the `main/main.c` file change the values of the *EXAMPLE_ESP_WIFI_SSID* and *EXAMPLE_ESP_WIFI_PASS* defines to the credentials
-of the WIFI network the ESP32 should connect to.
-
-With the *ESP_AP_SSID* and *ESP_AP_PASS* defines you can change the credentials of the Access Point created by the ESP32.
 
 By Default the DNS-Server which is offerd to clients connecting to the ESP32 AP is set to 8.8.8.8.
 Replace the value of the *MY_DNS_IP_ADDR* with your desired DNS-Server IP address (in hex) if you want to use a different one.

@@ -5,10 +5,11 @@
 #include "esp_system.h"
 #include "esp_wifi.h"
 #include "esp_wpa2.h"
-#include "esp_event_loop.h"
+#include "esp_event.h"
 #include "esp_log.h"
 #include "nvs_flash.h"
 #include "driver/gpio.h"
+#include "lwip/opt.h"
 
 #if IP_NAPT
 #include "lwip/lwip_napt.h"
@@ -20,11 +21,11 @@
 #define MY_DNS_IP_ADDR 0x08080808 // 8.8.8.8
 
 // WIFI CONFIGURATION
-#define ESP_AP_SSID "ESP AP"
-#define ESP_AP_PASS "test1337"
+#define ESP_AP_SSID CONFIG_ESP_AP_SSID
+#define ESP_AP_PASS CONFIG_ESP_AP_PASSWORD
 
-#define EXAMPLE_ESP_WIFI_SSID      "MY_WIFI_SSID"
-#define EXAMPLE_ESP_WIFI_PASS      "MY_WIFI_PASS"
+#define EXAMPLE_ESP_WIFI_SSID      CONFIG_STA_SSID
+#define EXAMPLE_ESP_WIFI_PASS      CONFIG_STA_PASSWORD
 
 #define EXAMPLE_ESP_MAXIMUM_RETRY  3
 
@@ -46,8 +47,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
     esp_wifi_connect();
     break;
   case SYSTEM_EVENT_STA_GOT_IP:
-    ESP_LOGI(TAG, "got ip:%s",
-	     ip4addr_ntoa(&event->event_info.got_ip.ip_info.ip));
+    ESP_LOGI(TAG, "got ip:" IPSTR, IP2STR(&event->event_info.got_ip.ip_info.ip));
     s_retry_num = 0;
     xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
     break;
@@ -121,8 +121,8 @@ void wifi_init_sta()
     dnsserver.type = IPADDR_TYPE_V4;
     dhcps_dns_setserver(&dnsserver);
 
-    tcpip_adapter_get_dns_info(TCPIP_ADAPTER_IF_AP, TCPIP_ADAPTER_DNS_MAIN, &dnsinfo);
-    ESP_LOGI(TAG, "DNS IP:" IPSTR, IP2STR(&dnsinfo.ip.u_addr.ip4));
+//    tcpip_adapter_get_dns_info(TCPIP_ADAPTER_IF_AP, TCPIP_ADAPTER_DNS_MAIN, &dnsinfo);
+//    ESP_LOGI(TAG, "DNS IP:" IPSTR, IP2STR(&dnsinfo.ip.u_addr.ip4));
 
     ESP_ERROR_CHECK(esp_wifi_start());
 
