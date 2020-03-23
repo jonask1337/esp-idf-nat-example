@@ -77,7 +77,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
 void wifi_init_sta()
 {
     ip_addr_t dnsserver;
-    tcpip_adapter_dns_info_t dnsinfo;
+    //tcpip_adapter_dns_info_t dnsinfo;
 
     s_wifi_event_group = xEventGroupCreate();
 
@@ -121,8 +121,8 @@ void wifi_init_sta()
     dnsserver.type = IPADDR_TYPE_V4;
     dhcps_dns_setserver(&dnsserver);
 
-//    tcpip_adapter_get_dns_info(TCPIP_ADAPTER_IF_AP, TCPIP_ADAPTER_DNS_MAIN, &dnsinfo);
-//    ESP_LOGI(TAG, "DNS IP:" IPSTR, IP2STR(&dnsinfo.ip.u_addr.ip4));
+    //tcpip_adapter_get_dns_info(TCPIP_ADAPTER_IF_AP, TCPIP_ADAPTER_DNS_MAIN, &dnsinfo);
+    //ESP_LOGI(TAG, "DNS IP:" IPSTR, IP2STR(&dnsinfo.ip.u_addr.ip4));
 
     ESP_ERROR_CHECK(esp_wifi_start());
 
