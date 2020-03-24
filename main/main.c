@@ -10,6 +10,7 @@
 #include "nvs_flash.h"
 #include "driver/gpio.h"
 #include "lwip/opt.h"
+#include "esp_event_loop.h"
 
 #if IP_NAPT
 #include "lwip/lwip_napt.h"
