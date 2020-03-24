@@ -10,6 +10,8 @@ Based on: https://github.com/espressif/esp-idf/blob/release/v3.3/examples/wifi/g
 Example network setup using ESP32 as WiFi repeater. The diagram was created with [Draw.io](https://www.draw.io/).
 ## Get started
 The following are the steps required to run this project on the ESP32 and turn it into a WiFi repeater.
+The example is for version 4.0 of ESP-IDF. If you want to use ESP-IDF v3.3 use the [esp-idf-v3.3](https://github.com/jonask1337/esp-idf-nat-example/tree/esp-idf-v3.3) branch.
+
 ### Step 1 - Setup ESP-IDF
 Download and setup the ESP-IDF.
 
@@ -30,7 +32,7 @@ Note: It is important to clone the repository. If it is only downloaded it will 
 1. Configure and set the option "Enable copy between Layer2 and Layer3 packets" in the ESP-IDF project configuration.
     1. In the project directory run `make menuconfig` (or `idf.py menuconfig` for cmake).
     2. Go to *Component config -> LWIP* and set "Enable copy between Layer2 and Layer3 packets" option.
-    3. Go to *Example config* and set SSID and Password of both, the uplink STA interface and the SoftAP.
+    3. Go to *Example configuration* and set SSID and Password of both, the uplink STA interface and the SoftAP.
 2. Build the project and flash it to the ESP32.
 
 A detailed instruction on how to build, configure and flash a ESP-IDF project can also be found the official ESP-IDF guide.
