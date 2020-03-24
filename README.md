@@ -1,6 +1,6 @@
-# ESP-IDF example with WIFI and NAT setup
+# ESP-IDF v3.3 example with WIFI and NAT setup
 
-An example firmware to use the ESP32 as WiFi repeater.
+An example firmware to use the ESP32 as WiFi repeater. Tested with version 3.3 of the ESP-IDF.
 
 **Requires** this lwIP library with NAT support to be used as ESP-IDF lwIP component: https://github.com/martin-ger/esp-lwip
 
@@ -16,7 +16,7 @@ Download and setup the ESP-IDF.
 ### Step 2 - Get the lwIP library with NAT
 Download the repository of the NAT lwIP library using the follwing command:
 
-`git clone https://github.com/martin-ger/esp-lwip.git`
+`git clone https://github.com/jonask1337/esp-lwip.git`
 
 Note: It is important to clone the repository. If it is only downloaded it will be replaced by the orginal lwIP library during the build.
 
@@ -30,7 +30,7 @@ Note: It is important to clone the repository. If it is only downloaded it will 
 1. Configure and set the option "Enable copy between Layer2 and Layer3 packets" in the ESP-IDF project configuration.
     1. In the project directory run `make menuconfig` (or `idf.py menuconfig` for cmake).
     2. Go to *Component config -> LWIP* and set "Enable copy between Layer2 and Layer3 packets" option.
-    3. Go to *Example config* and set SSID and Password of both, the uplink STA interface and the SoftAP.
+    3. Go to *Example configuration* and set SSID and Password of both, the uplink STA interface and the SoftAP.
 2. Build the project and flash it to the ESP32.
 
 A detailed instruction on how to build, configure and flash a ESP-IDF project can also be found the official ESP-IDF guide.
