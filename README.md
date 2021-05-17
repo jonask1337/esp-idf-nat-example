@@ -39,4 +39,6 @@ A detailed instruction on how to build, configure and flash a ESP-IDF project ca
 By Default the DNS-Server which is offerd to clients connecting to the ESP32 AP is set to 8.8.8.8.
 Replace the value of the *MY_DNS_IP_ADDR* with your desired DNS-Server IP address (in hex) if you want to use a different one.
 
+## Known issues
+To fix compilation errors as described in [this](https://github.com/jonask1337/esp-idf-nat-example/issues/12) issue changes to the _esp-idf/components/tcpip_adapter/tcpip_adapter_lwip.c_ file are necessary at the moment. Detailed instruction can be found in [this](https://github.com/jonask1337/esp-idf-nat-example/issues/12#issuecomment-647120207) comment.
 
